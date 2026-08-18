@@ -1,0 +1,8 @@
+# Never commit credentials.
+.env
+*.key
+*.local
+
+# Derived data: the index and feed are rebuilt from the public source.
+*.db
+*.zip

@@ -1,0 +1,66 @@
+{
+  "across the city, midday": {
+    "Depart": "12:32",
+    "Arrive": "12:37",
+    "Minutes": 5,
+    "Changes": 0,
+    "Via": "direct",
+    "LoopStops": 0
+  },
+  "bayside: suburb to a loop station, evening": {
+    "Depart": "17:37",
+    "Arrive": "18:01",
+    "Minutes": 24,
+    "Changes": 1,
+    "Via": "vic:rail:SYR",
+    "LoopStops": 0
+  },
+  "east: city to a station the expresses skip, afternoon": {
+    "Depart": "16:30",
+    "Arrive": "16:48",
+    "Minutes": 18,
+    "Changes": 1,
+    "Via": "vic:rail:GFE",
+    "LoopStops": 0
+  },
+  "north: city outbound, evening": {
+    "Depart": "17:31",
+    "Arrive": "17:54",
+    "Minutes": 23,
+    "Changes": 1,
+    "Via": "vic:rail:FGS",
+    "LoopStops": 0
+  },
+  "north: city outbound, morning": {
+    "Depart": "08:06",
+    "Arrive": "08:38",
+    "Minutes": 32,
+    "Changes": 0,
+    "Via": "direct",
+    "LoopStops": 0
+  },
+  "regional gateway, morning": {
+    "Depart": "08:00",
+    "Arrive": "08:23",
+    "Minutes": 23,
+    "Changes": 1,
+    "Via": "vic:rail:SSS",
+    "LoopStops": 0
+  },
+  "west: city to a station the expresses pass": {
+    "Depart": "15:00",
+    "Arrive": "15:38",
+    "Minutes": 38,
+    "Changes": 0,
+    "Via": "direct",
+    "LoopStops": 0
+  },
+  "west: city to the junction, evening": {
+    "Depart": "17:30",
+    "Arrive": "17:51",
+    "Minutes": 21,
+    "Changes": 0,
+    "Via": "direct",
+    "LoopStops": 0
+  }
+}
