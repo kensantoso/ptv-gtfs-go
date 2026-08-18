@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - name: gofmt
+        run: |
+          unformatted=$(gofmt -l .)
+          if [ -n "$unformatted" ]; then echo "$unformatted"; exit 1; fi
+      - run: go vet ./...
+      # The integration tests need a 1.5GB index and skip without one; the
+      # remaining 74 run anywhere.
+      - run: go test -race ./...
+
+  # This package is imported by others, so it has to build where they build.
+  # It is pure Go — no cgo — which is what makes the matrix free.
+  cross:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        target: [linux/amd64, linux/arm64, darwin/arm64, windows/amd64]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - name: build ${{ matrix.target }}
+        run: |
+          GOOS=${TARGET%/*} GOARCH=${TARGET#*/} go build ./...
+        env:
+          TARGET: ${{ matrix.target }}
